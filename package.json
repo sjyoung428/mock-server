@@ -1,0 +1,20 @@
+{
+  "name": "mock-server",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "nodemon --exec ts-node src/app.ts"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^18.16.1",
+    "msw": "^1.2.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "@mswjs/http-middleware": "^0.8.0",
+    "nodemon": "^2.0.22"
+  }
+}
