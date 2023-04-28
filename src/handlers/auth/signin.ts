@@ -1,20 +1,20 @@
 import { rest } from "msw";
 import { user } from "../../database/user";
 import { SigninBody, SigninResponse } from "./types";
+// import { newUser } from "./signup";
 
 export const signinHandler = rest.post<SigninBody, SigninResponse>(
   "/api/signin",
   (req, res, ctx) => {
-    const { authToken } = req.cookies;
     const { email, password } = req.body;
 
     const userFound = user.find(
       (user) => user.email === email && user.password === password
     );
-
-    if (authToken && userFound) {
+    if (userFound) {
       return res(
         ctx.status(200),
+        ctx.cookie("auth-token", "token"),
         ctx.json({
           message: "Success",
           token: userFound.token,
