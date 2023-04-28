@@ -1,19 +1,10 @@
 import { rest } from "msw";
-import { user } from "../database/user";
+import { user } from "../../database/user";
+import { SignupBody, SignupResponse } from "./types";
 
-interface SignupBody {
-  email: string;
-  password: string;
-  username: string;
-}
-
-interface SignupResponse {
-  message: string;
-}
-
-export const handlers = [
-  // sign up
-  rest.post<SignupBody, SignupResponse>("/api/signup", (req, res, ctx) => {
+export const signupHandler = rest.post<SignupBody, SignupResponse>(
+  "/api/signup",
+  (req, res, ctx) => {
     const { email, password, username } = req.body;
     user.concat({
       id: user.length + 1,
@@ -22,7 +13,7 @@ export const handlers = [
       username,
       token: "token",
     });
-    if (email && password) {
+    if (email && username && password) {
       return res(
         ctx.status(200),
         ctx.json({
@@ -37,5 +28,5 @@ export const handlers = [
         })
       );
     }
-  }),
-];
+  }
+);

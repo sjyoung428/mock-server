@@ -1,5 +1,5 @@
 import { createServer } from "@mswjs/http-middleware";
-import { handlers } from "./mocks/handlers";
+import { handlers } from "./handlers/handlers";
 
 // port number for the server to listen on (default 8080)
 const PORT = 8080;
