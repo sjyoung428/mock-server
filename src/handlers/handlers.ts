@@ -1,5 +1,5 @@
 import { signupHandler } from "./auth/signup";
 import { signinHandler } from "./auth/signin";
-import { articleGetAllHandler } from "./article/getAll";
+import { postGetAllHandler } from "./post/getAll";
 
-export const handlers = [signupHandler, signinHandler, articleGetAllHandler];
+export const handlers = [signupHandler, signinHandler, postGetAllHandler];
