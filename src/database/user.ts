@@ -10,7 +10,7 @@ export const user: UserType[] = [
   {
     id: 1,
     username: "test",
-    email: "test@google.com",
+    email: "Test@google.com",
     password: "123123123",
     token: "2nq3kKjQFkyW8iJd3YX9n5xRjKdW8Zn5",
   },
