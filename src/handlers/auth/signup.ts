@@ -2,8 +2,6 @@ import { rest } from "msw";
 import { user } from "../../database/user";
 import { SignupBody, SignupResponse } from "./types";
 
-// export const newUser = [...user];
-
 export const signupHandler = rest.post<SignupBody, SignupResponse>(
   "/api/signup",
   (req, res, ctx) => {

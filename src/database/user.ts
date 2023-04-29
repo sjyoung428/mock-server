@@ -9,9 +9,9 @@ interface UserType {
 export const user: UserType[] = [
   {
     id: 1,
-    username: "lirapi",
-    email: "lirapi@google.com",
-    password: "!h#]m9G@^=}#>H",
+    username: "test",
+    email: "test@google.com",
+    password: "123123123",
     token: "2nq3kKjQFkyW8iJd3YX9n5xRjKdW8Zn5",
   },
   {
